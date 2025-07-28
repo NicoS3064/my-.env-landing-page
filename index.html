@@ -20,80 +20,11 @@
 
     <!-- MailerLite Universal -->
     <script>
-    // Initialize MailerLite account configuration
-    window.ml_account = window.ml_account || {};
-    window.ml_account.id = '1655096';
-    
-    // Create a ready state tracker
-    window.ml_ready = false;
-    window.ml_queue = [];
-    
-    // Safe wrapper for MailerLite calls
-    window.ml_safe = function(action, ...args) {
-      if (window.ml_ready && window.ml && typeof window.ml === 'function') {
-        try {
-          console.log('Executing MailerLite call:', action, args);
-          return window.ml(action, ...args);
-        } catch (error) {
-          console.error('MailerLite error:', error);
-          return false;
-        }
-      } else {
-        // Queue the call for later execution
-        window.ml_queue.push({ action, args });
-        console.log('MailerLite not ready, queuing call:', action);
-        return false;
-      }
-    };
-    
-    (function(w,d,e,u,f,l,n){
-      w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
-      l=d.createElement(e);l.async=1;l.src=u;
-      n=d.getElementsByTagName(e)[0];
-      n.parentNode.insertBefore(l,n);
-      
-      // Enhanced load handling with proper function detection
-      l.onload = function() {
-        console.log('MailerLite script loaded, checking for ml function...');
-        
-        // Wait for MailerLite ml function to be available
-        const checkReady = (attempts = 0) => {
-          if (w[f] && typeof w[f] === 'function') {
-            try {
-              // Initialize the account
-              w[f]('account', '1655096');
-              w.ml_ready = true;
-              console.log('MailerLite ml function is ready');
-              
-              // Process queued calls
-              while (w.ml_queue.length > 0) {
-                const { action, args } = w.ml_queue.shift();
-                try {
-                  console.log('Processing queued call:', action, args);
-                  w[f](action, ...args);
-                } catch (error) {
-                  console.error('Error processing queued MailerLite call:', error);
-                }
-              }
-              
-            } catch (error) {
-              console.error('MailerLite initialization failed:', error);
-            }
-          } else if (attempts < 40) {
-            // Check every 250ms for up to 10 seconds
-            setTimeout(() => checkReady(attempts + 1), 250);
-          } else {
-            console.error('MailerLite ml function failed to initialize after 10 seconds');
-          }
-        };
-        
-        checkReady();
-      };
-      
-      l.onerror = function() {
-        console.error('Failed to load MailerLite script');
-      };
-    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1655096');
     </script>
     <!-- End MailerLite Universal -->
 
