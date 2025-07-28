@@ -10,7 +10,6 @@ declare global {
     ml_account?: any;
     ml_ready?: boolean;
     ml_queue?: any[];
-    ml_safe?: (action: string, ...args: any[]) => boolean;
     ml?: (...args: any[]) => void;
   }
 }

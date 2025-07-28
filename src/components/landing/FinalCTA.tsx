@@ -4,7 +4,7 @@ import { ArrowRight, Shield, Clock, Users, Rocket, Zap, Lock } from 'lucide-reac
 
 const FinalCTA = () => {
   const showMailerLitePopup = () => {
-    const success = (window as any).ml_safe?.('show', 'XVg7nu', true);
+    const success = (window as any).ml?.('show', 'XVg7nu', true);
     
     if (!success) {
       console.log('MailerLite popup call was queued or failed');
@@ -79,14 +79,14 @@ const FinalCTA = () => {
             {/* Primary CTA */}
             <div className="space-y-8">
               <div className="bg-gradient-to-r from-white/10 to-blue-500/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                <button 
-                  className="group ml-onclick-form bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 hover:from-yellow-400 hover:via-orange-400 hover:to-red-400 text-black px-12 py-6 text-2xl font-black rounded-2xl transition-all duration-300 inline-flex items-center justify-center shadow-2xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-110 hover:-translate-y-2"
-                  onClick={showMailerLitePopup}
+                <a 
+                  className="group ml-onclick-form bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 hover:from-yellow-400 hover:via-orange-400 hover:to-red-400 text-black px-12 py-6 text-2xl font-black rounded-2xl transition-all duration-300 inline-flex items-center justify-center shadow-2xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-110 hover:-translate-y-2 cursor-pointer"
+                  onClick={() => (window as any).ml?.('show', 'XVg7nu', true)}
                 >
                   <Lock className="mr-4 h-8 w-8 group-hover:rotate-12 transition-transform duration-300" />
                   Get Your Free Security Checklist Now
                   <ArrowRight className="ml-4 h-8 w-8 group-hover:translate-x-2 transition-transform duration-300" />
-                </button>
+                </a>
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-blue-200 mt-6">
                   <div className="flex items-center gap-2">

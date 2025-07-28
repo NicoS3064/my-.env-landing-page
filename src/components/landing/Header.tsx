@@ -4,7 +4,7 @@ import { Code2, Lock } from 'lucide-react';
 
 const Header = () => {
   const showMailerLitePopup = () => {
-    const success = (window as any).ml_safe?.('show', 'XVg7nu', true);
+    const success = (window as any).ml?.('show', 'XVg7nu', true);
     
     if (!success) {
       console.log('MailerLite popup call was queued or failed');
@@ -35,12 +35,12 @@ const Header = () => {
           </div>
           
           {/* CTA */}
-          <button 
-            className="ml-onclick-form bg-slate-900 hover:bg-slate-800 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200"
-            onClick={showMailerLitePopup}
+          <a 
+            className="ml-onclick-form bg-slate-900 hover:bg-slate-800 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200 cursor-pointer"
+            onClick={() => (window as any).ml?.('show', 'XVg7nu', true)}
           >
             Get Free Checklist
-          </button>
+          </a>
         </div>
       </div>
     </header>

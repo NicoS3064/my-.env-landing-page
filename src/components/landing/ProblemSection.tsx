@@ -5,7 +5,7 @@ const ProblemSection = () => {
   const showMailerLitePopup = () => {
     console.log('Button clicked - attempting to show MailerLite popup');
     
-    (window as any).ml_safe?.('show', 'XVg7nu', true);
+    (window as any).ml?.('show', 'XVg7nu', true);
   };
 
   const problems = [
@@ -112,12 +112,12 @@ const ProblemSection = () => {
               <span className="font-black text-2xl text-red-600"> $4.45 million</span>. 
               <strong className="text-red-900 dark:text-red-300"> API security incidents are increasingly common</strong> and exposed credentials are often the entry point.
             </p>
-            <button 
-              className="mt-6 inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full font-bold text-lg shadow-lg hover:bg-red-700 transition-colors cursor-pointer"
-              onClick={showMailerLitePopup}
+            <a 
+              className="ml-onclick-form mt-6 inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full font-bold text-lg shadow-lg hover:bg-red-700 transition-colors cursor-pointer"
+              onClick={() => (window as any).ml?.('show', 'XVg7nu', true)}
             >
               🚨 Don't become another statistic
-            </button>
+            </a>
           </div>
         </div>
       </div>
