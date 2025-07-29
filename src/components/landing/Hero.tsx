@@ -36,7 +36,7 @@ const Hero = () => {
             <div className="space-y-8">
               <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight text-foreground bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent">
                 Stop Hardcoding API Keys. 
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-pulse"> Secure Your API Keys</span> Instead.
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-pulse"> Secure Them</span> Instead.
               </h1>
               <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-medium">
                 <span className="text-primary font-bold">my .env</span> automatically rotates your API keys and gives your apps one secure endpoint to fetch credentials. 
