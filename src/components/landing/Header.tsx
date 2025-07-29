@@ -37,7 +37,7 @@ const Header = () => {
           {/* CTA */}
           <a 
             className="ml-onclick-form bg-slate-900 hover:bg-slate-800 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200 cursor-pointer"
-            onClick={() => (window as any).ml?.('show', 'XVg7nu', true)}
+            onClick={() => (window as any).ml('show', 'XVg7nu', true)}
           >
             Get Free Checklist
           </a>

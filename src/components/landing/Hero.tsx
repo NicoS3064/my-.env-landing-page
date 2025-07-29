@@ -45,9 +45,9 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6">
-              <a
-                className="group ml-onclick-form bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-slate-800 hover:via-slate-700 hover:to-slate-800 text-white px-10 py-4 text-xl font-bold rounded-xl border-0 transition-all duration-300 inline-flex items-center justify-center shadow-2xl shadow-slate-900/25 hover:shadow-slate-900/40 hover:scale-105 hover:-translate-y-1 cursor-pointer"
-                onClick={() => (window as any).ml?.('show', 'XVg7nu', true)}
+              <a 
+                className="group ml-onclick-form bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-slate-800 hover:via-slate-700 hover:to-slate-800 text-white px-10 py-4 text-xl font-bold rounded-xl border-0 transition-all duration-300 inline-flex items-center justify-center shadow-2xl shadow-slate-900/50 hover:shadow-slate-900/70 hover:scale-105 transform cursor-pointer"
+                onClick={() => (window as any).ml('show', 'XVg7nu', true)}
               >
                 <Lock className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
                 Get Your Free Security Checklist

@@ -114,7 +114,7 @@ const ProblemSection = () => {
             </p>
             <a 
               className="ml-onclick-form mt-6 inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full font-bold text-lg shadow-lg hover:bg-red-700 transition-colors cursor-pointer"
-              onClick={() => (window as any).ml?.('show', 'XVg7nu', true)}
+              onClick={() => (window as any).ml('show', 'XVg7nu', true)}
             >
               🚨 Don't become another statistic
             </a>
