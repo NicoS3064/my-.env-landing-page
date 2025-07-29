@@ -3,8 +3,6 @@ import { AlertTriangle, FileX, Clock, Shield, Flame, Skull } from 'lucide-react'
 
 const ProblemSection = () => {
   const showMailerLitePopup = () => {
-    console.log('Button clicked - attempting to show MailerLite popup');
-    
     (window as any).ml?.('show', 'XVg7nu', true);
   };
 

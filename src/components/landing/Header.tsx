@@ -4,11 +4,7 @@ import { Code2, Lock } from 'lucide-react';
 
 const Header = () => {
   const showMailerLitePopup = () => {
-    const success = (window as any).ml?.('show', 'XVg7nu', true);
-    
-    if (!success) {
-      console.log('MailerLite popup call was queued or failed');
-    }
+    (window as any).ml?.('show', 'XVg7nu', true);
   };
 
   return (
